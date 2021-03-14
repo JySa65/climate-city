@@ -41,7 +41,6 @@ const Forms = ({search, setSearch, setIsValidForm, disabled, setDisabled}) => {
   };
 
   const handleSubmit = () => {
-    console.log('si');
     setDisabled(true);
     if (search.city.trim() === '') {
       setDisabled(false);
@@ -55,7 +54,7 @@ const Forms = ({search, setSearch, setIsValidForm, disabled, setDisabled}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <>
       <View>
         <TextInput
           value={search.city}
@@ -91,14 +90,11 @@ const Forms = ({search, setSearch, setIsValidForm, disabled, setDisabled}) => {
           <Text style={styles.btnSearchText}>Buscar Clima</Text>
         </Animated.View>
       </TouchableNativeFeedback>
-    </View>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 50,
-  },
   textInput: {
     backgroundColor: '#fff',
     color: '#000',
